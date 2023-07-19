@@ -2,14 +2,20 @@ import './App.css';
 
 function App() {
   // personal data
+  const position = {
+        desired: ["Web Developer", "Software Developer", "Software Engineer",
+          "Fullstack Developer", "Frontend Developer"],
+        preferred: ["Web Developer", "Fullstack Web Developer", "Frontend Web Developer"]
+      }
+  ;
+  const personalData = { firstName: "Peter", lastName: "Stackebrandt",
+    birthday: "1970-01-01"};
   const name = "Peter Stackebrandt";
-  const position = "Web Developer";
-  
-  const birthday = "1970-01-01";
-  const address = { street: "Musterstraße 1", zip: "12345", city: "Feucht"}
-  const phone = "+49 123 456789";
-  const email = "peter.st@dummy.email.com";
-  const pageTitle = "Profil";
+  const address = { street: "Musterstraße 1", zip: "12345", city: "Feucht"};
+  const contact = { phone: "+49 123 456789",
+    email: "peter.st@dummy.email.com"};
+
+
 
 
   /* e.g. Header: Name, Position, Foto */
@@ -24,12 +30,14 @@ function App() {
     return <main>
       <div>
         <div className="tag-marker"><sub>MAIN</sub></div>
-        <PageTitle />
+
+        <PageTitle title="Profil" />
+
         <AboutMe />
         {/* Fähigkeiten */}
         {/* Projekte */}
         {/* Ausbildung */}
-        {/* Kontakt */}
+        <Contact />
       </div>
     </main>;
   }
@@ -41,15 +49,16 @@ function App() {
         <h2>Über mich</h2>
         <div>Name: {name}</div>
         <div>City: {address.city}</div>
+        <div>Angestrebte Positionen: </div>
       </div>
     </about-me>;
   }
 
-  function PageTitle() {
+  function PageTitle(props) {
     return <page-title>
       <div>
         <div className="tag-marker"><sub>PAGE TITLE</sub></div>
-        <h2>Title</h2>
+        <h2>{props.title}</h2>
       </div>
     </page-title>;
   }
@@ -57,10 +66,10 @@ function App() {
   function Contact() {
     return <contact>
       <div>
-        <div className="tag-marker"><sub>ABOUT ME</sub></div>
-        <h2>Über mich</h2>
-        <div>Name: {name}</div>
-        <div>City: {address.city}</div>
+        <div className="tag-marker"><sub>CONTACT</sub></div>
+        <h2>Kontaktinformationen</h2>
+        <div>Email: {contact.email}</div>
+        <div>Telefon: {contact.phone}</div>
       </div>
     </contact>;
   }
