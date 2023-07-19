@@ -15,7 +15,7 @@ function App() {
   /* e.g. Header: Name, Position, Foto */
   function AppHeader() {
     return <header>
-    <div class="tag-marker"><sub>HEADER</sub></div>
+    <div className="tag-marker"><sub>HEADER</sub></div>
       <p>{name}</p>
     </header>;
   }
@@ -23,7 +23,7 @@ function App() {
   function AppMain() {
     return <main>
       <div>
-        <div class="tag-marker"><sub>MAIN</sub></div>
+        <div className="tag-marker"><sub>MAIN</sub></div>
         <PageTitle />
         <AboutMe />
         {/* Fähigkeiten */}
@@ -37,7 +37,7 @@ function App() {
   function AboutMe() {
     return <about-me>
       <div>
-        <div class="tag-marker"><sub>ABOUT ME</sub></div>
+        <div className="tag-marker"><sub>ABOUT ME</sub></div>
         <h2>Über mich</h2>
         <div>Name: {name}</div>
         <div>City: {address.city}</div>
@@ -48,16 +48,27 @@ function App() {
   function PageTitle() {
     return <page-title>
       <div>
-        <div class="tag-marker"><sub>PAGE TITLE</sub></div>
+        <div className="tag-marker"><sub>PAGE TITLE</sub></div>
         <h2>Title</h2>
       </div>
     </page-title>;
   }
 
+  function Contact() {
+    return <contact>
+      <div>
+        <div className="tag-marker"><sub>ABOUT ME</sub></div>
+        <h2>Über mich</h2>
+        <div>Name: {name}</div>
+        <div>City: {address.city}</div>
+      </div>
+    </contact>;
+  }
+
   // Footer: Links zu deinen Social-Media-Profilen, kurze Nachricht, dass du für Anfragen zur Verfügung stehst.
   function AppFooter() {
     return <footer>
-      <div  class="tag-marker"><sub>FOOTER</sub></div>
+      <div  className="tag-marker"><sub>FOOTER</sub></div>
       <div>
         Ich bin offen für neue Herausforderungen und freue mich auf Ihre Anfragen.
       </div>
